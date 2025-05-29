@@ -1,0 +1,25 @@
+# Dependencies
+node_modules/
+package-lock.json
+
+# IDE specific files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS specific files
+.DS_Store
+Thumbs.db
+
+# Debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Temporarily ignore large files
+textures/**/*.jpg
+textures/**/*.png
+textures/**/*.hdr
+sounds/**/*.wav
+sounds/**/*.mp3
