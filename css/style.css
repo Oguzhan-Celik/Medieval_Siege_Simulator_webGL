@@ -1,0 +1,251 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #000;
+  font-family: "Arial", sans-serif;
+  overflow: hidden;
+}
+
+#canvas {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+}
+
+.ui-panel {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  border: 2px solid #8b4513;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  min-width: 250px;
+  backdrop-filter: blur(5px);
+}
+
+.ui-panel h3 {
+  margin: 0 0 15px 0;
+  text-align: center;
+  color: #ffd700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.control-group {
+  margin-bottom: 15px;
+}
+
+.control-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #ddd;
+}
+
+.control-group input[type="range"] {
+  width: 100%;
+  height: 6px;
+  background: #333;
+  border-radius: 3px;
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.control-group input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #8b4513;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.button-group {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.button-group button {
+  flex: 1;
+  padding: 10px;
+  background: linear-gradient(45deg, #8b4513, #a0522d);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.button-group button:hover {
+  background: linear-gradient(45deg, #a0522d, #cd853f);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.button-group button:active {
+  transform: translateY(0);
+}
+
+.info-group {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.info-group div {
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+.controls-info {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 15px;
+  border-radius: 5px;
+  font-size: 12px;
+}
+
+.controls-info h4 {
+  margin: 0 0 10px 0;
+  color: #ffd700;
+}
+
+.controls-info ul {
+  margin: 0;
+  padding-left: 15px;
+}
+
+.controls-info li {
+  margin-bottom: 5px;
+  color: #ccc;
+}
+
+#selectedObject {
+  color: #ffd700;
+  font-weight: bold;
+}
+
+/* Volume Controls */
+.volume-controls {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  padding: 15px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 8px;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.volume-control {
+  margin-bottom: 12px;
+}
+
+.volume-control:last-child {
+  margin-bottom: 0;
+}
+
+.volume-control label {
+  color: #ffffff;
+  font-size: 14px;
+  margin-bottom: 4px;
+  display: block;
+}
+
+.volume-slider {
+  width: 150px;
+  height: 6px;
+  appearance: none;
+  -webkit-appearance: none;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+  outline: none;
+}
+
+.volume-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  background: #ffffff;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.volume-slider::-webkit-slider-thumb:hover {
+  background: #f0f0f0;
+  transform: scale(1.1);
+}
+
+.volume-slider::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  background: #ffffff;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.volume-slider::-moz-range-thumb:hover {
+  background: #f0f0f0;
+  transform: scale(1.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .ui-panel {
+    width: calc(100vw - 40px);
+    max-width: 300px;
+  }
+
+  .button-group {
+    flex-direction: column;
+  }
+
+  .controls-info {
+    font-size: 11px;
+  }
+}
+
+/* Animation Effects */
+@keyframes glow {
+  0%,
+  100% {
+    box-shadow: 0 4px 20px rgba(139, 69, 19, 0.5);
+  }
+  50% {
+    box-shadow: 0 4px 30px rgba(139, 69, 19, 0.8);
+  }
+}
+
+.ui-panel:hover {
+  animation: glow 2s infinite;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #8b4513;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a0522d;
+}

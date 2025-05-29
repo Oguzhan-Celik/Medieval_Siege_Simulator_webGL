@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Medieval Siege Simulator</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <canvas id="canvas"></canvas>
+
+    <div class="ui-panel">
+      <h3>🏰 Medieval Siege Simulator</h3>
+
+      <div class="control-group">
+        <label>Seçili Nesne: <span id="selectedObject">Hiçbiri</span></label>
+      </div>
+
+      <div class="control-group">
+        <label>Meşale Işığı: <span id="torchValue">75%</span></label>
+        <input type="range" id="torchSlider" min="0" max="100" value="75" />
+      </div>
+
+      <div class="control-group">
+        <label>Mancınık Gerginliği: <span id="tensionValue">50%</span></label>
+        <input type="range" id="tensionSlider" min="10" max="100" value="50" />
+      </div>
+
+      <div class="button-group">
+        <button id="fireButton">🏹 Ateş Et</button>
+        <button id="resetButton">🔄 Sıfırla</button>
+      </div>
+
+      <div class="info-group">
+        <div>FPS: <span id="fps">60</span></div>
+        <div>Kamera: <span id="cameraPos">X:0 Y:10 Z:20</span></div>
+      </div>
+
+      <div class="controls-info">
+        <h4>Kontroller:</h4>
+        <ul>
+          <li>WASD: Hareket</li>
+          <li>R/F: Yukarı/Aşağı</li>
+          <li>Q/E: Döndür</li>
+          <li>Space: Ateş Et</li>
+          <li>Sol Tık: Nesne Seç</li>
+          <li>Sağ Tık: Barut Kur</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Import Three.js -->
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://unpkg.com/three@0.158.0/build/three.module.js",
+          "three/addons/": "https://unpkg.com/three@0.158.0/examples/jsm/"
+        }
+      }
+    </script>
+
+    <!-- Main Application -->
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>
